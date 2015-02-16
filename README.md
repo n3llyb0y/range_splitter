@@ -44,6 +44,19 @@ require 'range_splitter'
 
 (1..3).split(:into => -3)
 # ArgumentError: Cannot split 1..3 into -3 ranges.
+
+# Splitting works on any utf-8 string
+
+('a'..'z').split(:into => 4)
+#=> ["a".."g", "h".."n", "o".."t", "u".."z"]
+
+('Ǡ'..'ǿ').split(:into => 3, :endianness => :little)
+#=> ["Ǡ".."ǩ", "Ǫ".."ǳ", "Ǵ".."ǿ"]
+
+# A string range is simply based on ordinal value
+
+('1'..'Z').split
+#=> ["1".."E", "F".."Z"]
 ```
 
 ## Contribution

@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/tuzz/range_splitter'
   s.files       = ['README.md'] + Dir['lib/**/*.*']
 
-  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rspec', '~> 3.1'
 end
